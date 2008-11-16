@@ -1,7 +1,7 @@
 
 %define realname   aliased
 %define version    0.22
-%define release    %mkrel 2
+%define release    %mkrel 3
 
 Name:       perl-%{realname}
 Version:    %{version}
@@ -15,6 +15,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
+Provides: perl(aliased)
 
 BuildArch: noarch
 
