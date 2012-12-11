@@ -13,8 +13,8 @@ Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_v
 
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl-devel
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 Provides: perl(aliased)
 
@@ -36,14 +36,34 @@ subroutine is the last part of the class name.
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README
 %{_mandir}/man3/*
 %perl_vendorlib/*
+
+
+%changelog
+* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.300.0-2mdv2011.0
++ Revision: 658903
+- rebuild for updated spec-helper
+
+* Thu Aug 06 2009 Jérôme Quelin <jquelin@mandriva.org> 0.300.0-1mdv2010.0
++ Revision: 410629
+- update to 0.30
+
+* Sun Nov 16 2008 Jérôme Quelin <jquelin@mandriva.org> 0.22-3mdv2009.1
++ Revision: 303674
+- forcing provides: since all-lower case modules are automatically stripped
+
+* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.22-2mdv2009.0
++ Revision: 268890
+- rebuild early 2009.0 package (before pixel changes)
+
+* Thu Jun 12 2008 Jérôme Quelin <jquelin@mandriva.org> 0.22-1mdv2009.0
++ Revision: 218578
+- fix summary & description
+- import perl-aliased
+
+
