@@ -1,15 +1,15 @@
 %define upstream_name    aliased
-%define upstream_version 0.30
+%define upstream_version 0.31
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    1
 
 Summary:    Use shorter versions of class names
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module//aliased-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
@@ -65,5 +65,6 @@ make test
 + Revision: 218578
 - fix summary & description
 - import perl-aliased
+
 
 
